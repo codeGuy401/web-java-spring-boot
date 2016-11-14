@@ -5,4 +5,5 @@ jdk:
 sudo: required
 services:
   - docker
-docker build -t jeid/warproject .
+script:
+  - docker build -t jeid/warproject .
