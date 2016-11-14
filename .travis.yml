@@ -1,8 +1,8 @@
 sudo: required
 language: java
-services:
-  - docker
 jdk:
   - oraclejdk8
+services:
+  - docker
 script:
   - docker build -t jeid/warproject .
