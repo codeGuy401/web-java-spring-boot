@@ -4,11 +4,10 @@ addons:
   apt:
     packages:
       - oracle-java8-installer
-before_install:
-  - pip install --user awscli
-  - export PATH=$PATH:$HOME/.local/bin
 services:
   - docker
 after_success:
   - docker build -t jeid/warproject .
   - docker push 
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
