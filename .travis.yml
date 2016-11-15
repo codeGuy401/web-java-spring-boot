@@ -13,4 +13,5 @@ after_success:
   - eval $(aws ecr get-login --region us-east-1)
   - docker tag myrepo:latest 556771014529.dkr.ecr.us-east-1.amazonaws.com/myrepo:latest
   - docker push 556771014529.dkr.ecr.us-east-1.amazonaws.com/myrepo:latest
+  - aws ecs stop-task --cluster default --task dockerDemo:1
   - aws ecs run-task --cluster default --task-definition dockerDemo:1
